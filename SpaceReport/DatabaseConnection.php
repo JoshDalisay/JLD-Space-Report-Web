@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "report_space";
-$password = "#Comp%Room3224!";
-$database = "space_report";
+$username = "";
+$password = "";
+$database = "";
 
 $conn = mysqli_connect($servername, $username, $password, $database);
 
