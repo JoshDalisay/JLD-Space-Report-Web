@@ -43,7 +43,7 @@ $_SESSION['startDate'] = $start_date;
 $_SESSION['endDate'] = $end_date;
 
 // Query the database for name counts
-$sql = "SELECT workstation_name, COUNT(*) as count FROM space_report_table WHERE scan_date BETWEEN '$start_date' AND '$end_date' GROUP BY workstation_name ORDER BY count DESC LIMIT 10";
+$sql = "SELECT workstation_name, COUNT(*) as count FROM space_report_table WHERE scan_date BETWEEN '$start_date' AND '$end_date' GROUP BY workstation_name ORDER BY count DESC LIMIT 1000";
 $result = mysqli_query($conn, $sql);
 
 // Create an associative array of name counts

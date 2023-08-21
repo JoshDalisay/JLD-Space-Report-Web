@@ -23,7 +23,7 @@
 <button type="button" class="btn btn-outline-primary" onclick="myFunction()">Change Date</button>
 <div id="DateSelector" style="display:none;" >
   <form method="post" action="">
-  Start Date: <input type="date" name="start_date" value="2023-04-01"><br><br>
+  Start Date: <input type="date" name="start_date" value="<?php echo date('Y-m-d', strtotime('-7 days')); ?>"><br><br>
   End Date: <input type="date" name="end_date" value="<?php echo date('Y-m-d'); ?>"><br><br>
   <input type="submit" name="submit" value="Submit">
   </form>
@@ -44,7 +44,9 @@ function myFunction() {
 </script>
 
 <?php 
-$start_date = '2023-04-01';
+# Default Days. Originally $start_date was manually set to the first date posted on the database. 
+# Changed it to be a week ago from the current date.
+$start_date = date('Y-m-d', strtotime('-7 days'));
 $end_date = date('Y-m-d');
 
 if (isset($_POST['submit'])) {
